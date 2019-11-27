@@ -25,11 +25,21 @@ namespace Regular_Expression
             {
                 MessageBox.Show("The name is invalid (only alphabetical characters are allowed)");
             }
+            else
+            {
+                label1.Text = "OK";
+
+            }
             if (!ValidPhone(textPhone.Text))
             {
                 MessageBox.Show("The phone number is not a valid US phone number");
 
                 }
+            else
+            {
+                label2.Text = "OK";
+
+            }
             if (!ValidMail(textMail.Text))
             {
                 MessageBox.Show("The e-mail address is not valid.");
@@ -37,7 +47,7 @@ namespace Regular_Expression
             }
             else
             {
-                MessageBox.Show("Mail is OK");
+                label3.Text = "OK";
             }
 
             textPhone.Text = ReformatPhone(textPhone.Text);
