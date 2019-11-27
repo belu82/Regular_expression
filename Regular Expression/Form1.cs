@@ -40,7 +40,8 @@ namespace Regular_Expression
                 MessageBox.Show("Mail is OK");
             }
 
-                       
+            textPhone.Text = ReformatPhone(textPhone.Text);
+
         }
 
         public bool ValidName (String nameText)
@@ -82,6 +83,12 @@ namespace Regular_Expression
             return false;
         }
 
+        static string ReformatPhone(string s)
+        {
+            Match m = Regex.Match(s, @"^\(?(\d{3})\)?[\s\-]?(\d{3})\-?(\d{4})$");
+            return String.Format("({0}) {1}-{2}", m.Groups[1], m.Groups[2], m.Groups[3]);
+           
 
+        }
     }
 }
